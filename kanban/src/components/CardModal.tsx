@@ -16,7 +16,7 @@ const CardModal = ({
 
 	const getColumnName = async (columnId: string) => {
 		const res = await fetch(
-			`http://localhost:8080/api/columns/single/${columnId}`
+			`https://kanban-backend-chi.vercel.app/api/columns/single/${columnId}`
 		)
 		const column = await res.json()
 		console.log(column)
@@ -24,7 +24,7 @@ const CardModal = ({
 	}
 
 	useEffect(() => {
-		fetch(`http://localhost:8080/api/cards/single/${cardId}`)
+		fetch(`https://kanban-backend-chi.vercel.app/api/cards/single/${cardId}`)
 			.then(res => res.json())
 			.then(
 				result => {

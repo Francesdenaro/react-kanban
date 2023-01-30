@@ -17,7 +17,7 @@ const Kanban = () => {
 	const ctx = useContext(KanbanContext)
 
 	useEffect(() => {
-		fetch('http://localhost:8080/api/columns')
+		fetch('https://kanban-backend-chi.vercel.app/api/columns')
 			.then(res => res.json())
 			.then(
 				result => {

@@ -5,7 +5,7 @@ const AddColumn = () => {
 	const [name, setName] = useState('')
 	const ctx = useContext(KanbanContext)
 	const addColumn = async (name: string) => {
-		let res = await fetch('http://localhost:8080/api/columns', {
+		let res = await fetch('https://kanban-backend-chi.vercel.app/api/columns', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

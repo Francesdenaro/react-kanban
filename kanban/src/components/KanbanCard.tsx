@@ -16,7 +16,7 @@ const KanbanCard = ({ data }: Props) => {
 	}
 	const handleDelete = async (cardId: string) => {
 		try {
-			await fetch(`http://localhost:8080/api/cards/${cardId}`, {
+			await fetch(`https://kanban-backend-chi.vercel.app/api/cards/${cardId}`, {
 				method: 'DELETE',
 			})
 			ctx.setRefreshCards(!ctx.refreshCards)

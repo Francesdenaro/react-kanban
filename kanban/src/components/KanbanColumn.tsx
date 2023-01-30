@@ -17,7 +17,7 @@ const KanbanColumn = ({ name, columnId }: Props) => {
 	const ctx = useContext(ColumnContext)
 
 	useEffect(() => {
-		fetch(`http://localhost:8080/api/cards/${columnId}`)
+		fetch(`https://kanban-backend-chi.vercel.app/api/cards/${columnId}`)
 			.then(res => res.json())
 			.then(
 				result => {
@@ -35,7 +35,7 @@ const KanbanColumn = ({ name, columnId }: Props) => {
 
 	const handleDrop = async (cardId: string, targetId: string) => {
 		try {
-			await fetch(`http://localhost:8080/api/cards/${cardId}`, {
+			await fetch(`https://kanban-backend-chi.vercel.app/api/cards/${cardId}`, {
 				method: 'PUT',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({ columnId: targetId }),

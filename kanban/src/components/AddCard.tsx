@@ -8,7 +8,7 @@ const AddCard = ({ columnId }: { columnId: string }) => {
 
 	const addCard = async () => {
 		console.log(title, description, columnId)
-		const res = await fetch('http://localhost:8080/api/cards', {
+		const res = await fetch('https://kanban-backend-chi.vercel.app/api/cards', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
