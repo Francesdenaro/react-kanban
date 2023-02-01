@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { KanbanContext } from '../App'
 import { Card } from './Types'
 
@@ -13,7 +14,7 @@ const CardModal = ({
 	const [card, setCard] = useState<Card | null>()
 	const [columnName, setColumnName] = useState<string>('')
 	const ctx = useContext(KanbanContext)
-
+	const navigate = useNavigate()
 	const getColumnName = async (columnId: string) => {
 		const res = await fetch(
 			`https://kanban-backend-chi.vercel.app/api/columns/single/${columnId}`
@@ -46,6 +47,7 @@ const CardModal = ({
 	const closeModal = () => {
 		setOpen(false)
 		ctx.setOpenModal(false)
+		navigate('/')
 	}
 
 	return (
